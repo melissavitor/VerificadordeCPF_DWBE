@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using VerificadordeCPF.Models;
+using VerificadordeCPF.Services;
 
 namespace VerificadordeCPF.Controllers;
 
@@ -16,6 +17,18 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         return View(new CpfInputModel());
+    }
+
+    [HttpPost]
+    public IActionResult ValidarBack([FromBody] CpfInputModel modelo)
+    {
+        var valido = VerificadorCpf.Validar(modelo.Cpf);
+
+        return Json(new
+        {
+            valido,
+            mensagem = valido ? "cpf correto no back" : "cpf incorreto no back"
+        });
     }
 
     public IActionResult Privacy()

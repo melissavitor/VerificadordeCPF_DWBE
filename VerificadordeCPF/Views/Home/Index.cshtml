@@ -1,8 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model CpfInputModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <h1>Validação de CPF — Arquitetura Cliente/Servidor</h1>
+
+    <form id="formCpf">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" maxlength="14" />
+        </div>
+
+        <div class="mb-3 d-flex gap-2">
+            <button type="button" id="btnFront" class="btn btn-primary">Valida CPF front</button>
+            <button type="button" id="btnBack" class="btn btn-primary">Valida CPF back</button>
+            <button type="button" id="btnWeb" class="btn btn-primary">Valida CPF web</button>
+        </div>
+    </form>
+
+    <div id="resultados">
+        <p id="resultadoFront"></p>
+        <p id="resultadoBack"></p>
+        <p id="resultadoWeb"></p>
+    </div>
 </div>
+
+<script src="~/js/cpf.js"></script>
