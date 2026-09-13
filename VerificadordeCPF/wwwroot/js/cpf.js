@@ -54,3 +54,22 @@ document.getElementById("btnBack").addEventListener("click", async () => {
         console.error(erro);
     }
 });
+
+document.getElementById("btnWeb").addEventListener("click", async () => {
+    const dados = pegarDados();
+    const el = document.getElementById("resultadoWeb");
+    el.textContent = "consultando serviço externo...";
+
+    try {
+        const resposta = await fetch("/Home/ValidarWeb", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dados)
+        });
+        const json = await resposta.json();
+        el.textContent = json.mensagem + (json.detalhe ? ` (${json.detalhe})` : "");
+    } catch (erro) {
+        el.textContent = "erro ao consultar o serviço externo";
+        console.error(erro);
+    }
+});

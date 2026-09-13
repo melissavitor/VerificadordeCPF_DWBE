@@ -95,4 +95,4 @@ C:\Users\Nathan\Desktop\Sistemas de Informação\2º Semestre\DWBE\Verificadorde
 C:\Users\Nathan\Desktop\Sistemas de Informação\2º Semestre\DWBE\VerificadordeCPF_DWBE\VerificadordeCPF\obj\Debug\net10.0\VerificadordeCPF.pdb
 C:\Users\Nathan\Desktop\Sistemas de Informação\2º Semestre\DWBE\VerificadordeCPF_DWBE\VerificadordeCPF\obj\Debug\net10.0\VerificadordeCPF.genruntimeconfig.cache
 C:\Users\Nathan\Desktop\Sistemas de Informação\2º Semestre\DWBE\VerificadordeCPF_DWBE\VerificadordeCPF\obj\Debug\net10.0\ref\VerificadordeCPF.dll
-C:\Users\Nathan\Desktop\Sistemas de Informação\2º Semestre\DWBE\VerificadordeCPF_DWBE\VerificadordeCPF\obj\Debug\net10.0\compressed\faaflud44f-{0}-b4dpawpd7l-b4dpawpd7l.gz
+C:\Users\Nathan\Desktop\Sistemas de Informação\2º Semestre\DWBE\VerificadordeCPF_DWBE\VerificadordeCPF\obj\Debug\net10.0\compressed\faaflud44f-{0}-8bv5qv9gq8-8bv5qv9gq8.gz

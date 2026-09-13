@@ -8,10 +8,12 @@ namespace VerificadordeCPF.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly CpfBrasilApiClient _apiClient;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, CpfBrasilApiClient apiClient)
     {
         _logger = logger;
+        _apiClient = apiClient;
     }
 
     public IActionResult Index()
@@ -28,6 +30,40 @@ public class HomeController : Controller
         {
             valido,
             mensagem = valido ? "cpf correto no back" : "cpf incorreto no back"
+        });
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ValidarWeb([FromBody] CpfInputModel modelo)
+    {
+        var cpfLimpo = new string((modelo.Cpf ?? string.Empty).Where(char.IsDigit).ToArray());
+
+        if (cpfLimpo.Length != 11)
+        {
+            return Json(new
+            {
+                valido = false,
+                mensagem = "cpf incorreto na web",
+                detalhe = "O CPF precisa ter 11 dígitos."
+            });
+        }
+
+        var resultado = await _apiClient.ConsultarAsync(cpfLimpo);
+
+        if (resultado.Erro is not null)
+        {
+            return Json(new
+            {
+                valido = false,
+                mensagem = "cpf incorreto na web",
+                detalhe = resultado.Erro
+            });
+        }
+
+        return Json(new
+        {
+            valido = resultado.Sucesso,
+            mensagem = resultado.Sucesso ? "cpf correto na web" : "cpf incorreto na web"
         });
     }
 

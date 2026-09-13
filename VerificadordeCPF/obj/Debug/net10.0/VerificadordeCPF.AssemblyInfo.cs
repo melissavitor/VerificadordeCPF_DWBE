@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VerificadordeCPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceebbd6bfd72d45d527e51d2bb600d6cb9ac6ed7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a3612d306ecaf9251e5d8dfd93fb4e0eeca20b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("VerificadordeCPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VerificadordeCPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
